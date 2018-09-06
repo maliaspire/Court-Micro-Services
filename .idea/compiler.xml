@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="court-micro-services_main" target="1.8" />
+      <module name="court-micro-services_test" target="1.8" />
+      <module name="courts-service_main" target="1.8" />
+      <module name="courts-service_test" target="1.8" />
+      <module name="files-service_main" target="1.8" />
+      <module name="files-service_test" target="1.8" />
+      <module name="shared-module_main" target="1.8" />
+      <module name="shared-module_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

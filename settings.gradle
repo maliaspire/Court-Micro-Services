@@ -1,0 +1,4 @@
+rootProject.name='Court Micro Services'
+include 'courts-service'
+include 'shared-module'
+include 'files-service'

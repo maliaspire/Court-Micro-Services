@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Court_Micro_Services.iml" filepath="$PROJECT_DIR$/.idea/modules/Court_Micro_Services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/courts-service/courts-service.iml" filepath="$PROJECT_DIR$/.idea/modules/courts-service/courts-service.iml" group="courts-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/courts-service/courts-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/courts-service/courts-service_main.iml" group="courts-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/courts-service/courts-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/courts-service/courts-service_test.iml" group="courts-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/files-service/files-service.iml" filepath="$PROJECT_DIR$/.idea/modules/files-service/files-service.iml" group="files-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/files-service/files-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/files-service/files-service_main.iml" group="files-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/files-service/files-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/files-service/files-service_test.iml" group="files-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared-module/shared-module.iml" filepath="$PROJECT_DIR$/.idea/modules/shared-module/shared-module.iml" group="shared-module" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared-module/shared-module_main.iml" filepath="$PROJECT_DIR$/.idea/modules/shared-module/shared-module_main.iml" group="shared-module" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared-module/shared-module_test.iml" filepath="$PROJECT_DIR$/.idea/modules/shared-module/shared-module_test.iml" group="shared-module" />
+    </modules>
+  </component>
+</project>

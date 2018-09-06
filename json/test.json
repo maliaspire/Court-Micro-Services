@@ -1,0 +1,17 @@
+{
+  "closeTime": "02:00",
+  "courtTypeId": "5b8f7914f647134cd49acd1d",
+  "maximumHoursReservation": 2,
+  "minimumHoursReservation": 1,
+  "name": "Oxford School",
+  "openTime": "05:00",
+  "price": 20,
+  "servicesList": [
+    {
+      "multiUse": false,
+      "name": "Balls",
+      "price": 0
+    }
+  ],
+  "size": 12
+}
