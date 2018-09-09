@@ -5,6 +5,7 @@ import com.mxninja.courtMicroServices.filesService.adapters.respositories.BinFil
 import com.mxninja.courtMicroServices.filesService.exceptions.FileNotFoundException;
 import com.mxninja.courtMicroServices.models.ResponseModel;
 import lombok.extern.slf4j.Slf4j;
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.io.IOUtils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -150,7 +151,20 @@ public class ImageController {
         int destWidth = (int) (sourceWidth * nPercent);
         int destHeight = (int) (sourceHeight * nPercent);
         long time = System.currentTimeMillis();
-        BufferedImage imageBuff = getFasterScaledInstance(img, destWidth, destHeight, true);
+
+        /*solution 1*/
+        /*BufferedImage imageBuff = getFasterScaledInstance(img, destWidth, destHeight, true);*/
+
+        /*solution 2*/
+        /*BufferedImage imageBuff = Thumbnails.of(img).size(destWidth, destHeight).asBufferedImage();*/
+
+        /*solution 3*/
+        Image image = img.getScaledInstance(destWidth, destHeight, Image.SCALE_SMOOTH);
+        BufferedImage imageBuff = new BufferedImage(destWidth, destHeight, BufferedImage.TYPE_INT_RGB);
+        Graphics2D graphics2D = (Graphics2D) imageBuff.getGraphics();
+        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        graphics2D.drawImage(image, 0, 0, null);
+
         log.debug(String.format("Time to draw image: %dms", System.currentTimeMillis() - time));
         time = System.currentTimeMillis();
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
