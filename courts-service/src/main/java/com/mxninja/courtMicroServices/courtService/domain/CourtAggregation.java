@@ -11,6 +11,7 @@ import org.bson.types.ObjectId;
 
 import java.time.LocalTime;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * 9/4/2018
@@ -26,6 +27,7 @@ public class CourtAggregation {
 
     @JsonIgnore
     private String id;
+    private UUID uuid;
     private String name;
     private int size;
     private String courtTypeId;
@@ -41,6 +43,7 @@ public class CourtAggregation {
     public static CourtProjection convertToProjection(CourtAggregation aggregation) {
         return new CourtProjection(
                 aggregation.getId() == null ? null : new ObjectId(aggregation.getId()),
+                aggregation.getUuid(),
                 aggregation.getName(),
                 aggregation.getSize(),
                 aggregation.getCourtTypeId() == null ? null : new ObjectId(aggregation.getCourtTypeId()),

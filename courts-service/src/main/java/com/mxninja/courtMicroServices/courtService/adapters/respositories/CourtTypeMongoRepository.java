@@ -28,6 +28,7 @@ public class CourtTypeMongoRepository {
     private CourtTypeProjection convertToProjection(CourtTypeAggregation aggregation) {
         return new CourtTypeProjection(
                 aggregation.getId() == null ? null : new ObjectId(aggregation.getId()),
+                aggregation.getUuid(),
                 aggregation.getName(),
                 aggregation.getImageUrl()
         );

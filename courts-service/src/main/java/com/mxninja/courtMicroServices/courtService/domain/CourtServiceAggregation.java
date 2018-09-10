@@ -5,6 +5,8 @@ import com.mxninja.courtMicroServices.courtService.adapters.respositories.CourtS
 import lombok.Data;
 import org.bson.types.ObjectId;
 
+import java.util.UUID;
+
 /**
  * 9/5/2018
  *
@@ -16,6 +18,7 @@ public class CourtServiceAggregation {
 
     @JsonIgnore
     private String id;
+    private UUID uuid;
     private String name;
     @JsonIgnore
     private String iconUrl;

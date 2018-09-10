@@ -1,6 +1,6 @@
 package com.mxninja.courtMicroServices.courtService.adapters.respositories;
 
-import com.mxninja.courtMicroServices.courtService.domain.CourtServiceAggregation;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +21,7 @@ import javax.persistence.GeneratedValue;
 public class CourtServiceProjection {
 
     @Id
+    @JsonIgnore
     @GeneratedValue
     private ObjectId id;
     private String name;

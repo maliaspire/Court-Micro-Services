@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 /**
  * 9/4/2018
  *
@@ -21,7 +23,7 @@ public class CourtTypeAggregation {
     @JsonIgnore
     private String id;
     @JsonIgnore
-    private String uid;
+    private UUID uuid;
     private String name;
     private String imageUrl;
 

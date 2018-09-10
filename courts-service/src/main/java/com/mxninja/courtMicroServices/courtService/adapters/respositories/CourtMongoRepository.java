@@ -40,19 +40,13 @@ public class CourtMongoRepository {
 
     private final CourtDAO courtDAO;
     private final MongoTemplate mongoTemplate;
-    private final GridFsTemplate gridFsTemplate;
-    private final GridFSBucket gridFSBucket;
 
     @Autowired
     public CourtMongoRepository(
             CourtDAO courtDAO,
-            MongoTemplate mongoTemplate,
-            GridFsTemplate gridFsTemplate,
-            GridFSBucket gridFSBucket) {
+            MongoTemplate mongoTemplate) {
         this.courtDAO = courtDAO;
         this.mongoTemplate = mongoTemplate;
-        this.gridFsTemplate = gridFsTemplate;
-        this.gridFSBucket = gridFSBucket;
     }
 
     public CourtProjection save(CourtAggregation aggregation) {
@@ -88,23 +82,6 @@ public class CourtMongoRepository {
 
     public CourtProjection update(CourtAggregation aggregation) {
         return courtDAO.save(CourtAggregation.convertToProjection(aggregation));
-    }
-
-    public CourtProjection update(CourtProjection projection) {
-        return courtDAO.save(projection);
-    }
-
-    public void saveImage(ObjectId id, byte[] imageBytes) {
-        gridFsTemplate.store(new ByteArrayInputStream(imageBytes), id.toHexString(), MediaType.IMAGE_JPEG_VALUE);
-    }
-
-    public InputStream getImage(ObjectId courtId) throws IOException {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("filename").is(courtId.toHexString()));
-        GridFSFile gridFS = gridFsTemplate.findOne(query);
-        if (gridFS == null) return null;
-        GridFsResource resource = new GridFsResource(gridFS, gridFSBucket.openDownloadStream(gridFS.getId()));
-        return resource.getInputStream();
     }
 
     public boolean addService(ObjectId id, CourtServiceAggregation aggregation) {

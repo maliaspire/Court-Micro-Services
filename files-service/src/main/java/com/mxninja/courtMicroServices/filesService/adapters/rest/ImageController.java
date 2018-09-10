@@ -5,14 +5,12 @@ import com.mxninja.courtMicroServices.filesService.adapters.respositories.BinFil
 import com.mxninja.courtMicroServices.filesService.exceptions.FileNotFoundException;
 import com.mxninja.courtMicroServices.models.ResponseModel;
 import lombok.extern.slf4j.Slf4j;
-import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.io.IOUtils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import sun.awt.image.ToolkitImage;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
