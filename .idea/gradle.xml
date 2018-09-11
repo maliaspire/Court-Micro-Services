@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/courts-service" />
             <option value="$PROJECT_DIR$/files-service" />
+            <option value="$PROJECT_DIR$/oauth-service" />
             <option value="$PROJECT_DIR$/shared-module" />
           </set>
         </option>

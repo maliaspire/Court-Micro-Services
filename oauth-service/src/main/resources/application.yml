@@ -1,0 +1,27 @@
+server:
+  port: 9997
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Oauth
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+    - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+logging:
+  level:
+    com:
+      mxninja: DEBUG
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
