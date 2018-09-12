@@ -2,6 +2,10 @@ server:
   port: 9997
 
 spring:
+  profiles:
+    active:
+    - rel
+
   servlet:
     multipart:
       max-file-size: 100MB

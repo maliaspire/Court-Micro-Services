@@ -21,11 +21,11 @@ public class AuthUserService implements UserDetailsService {
     private Map<String, AuthUser> map = new LinkedHashMap<>();
 
     public AuthUserService() {
-        addUser(new AuthUser("mxninja", "mx", new ArrayList<String>() {{
+        addUser(new AuthUser("9c8e21e4-b665-11e8-aeeb-529269fb1459", "mxninja", "mx", new ArrayList<String>() {{
             add("MANAGER");
             add("USER");
         }}));
-        addUser(new AuthUser("slifer", "slifer", new ArrayList<String>() {{
+        addUser(new AuthUser("cffe6877-6a52-483d-bcff-08c6bc803912", "slifer", "slifer", new ArrayList<String>() {{
             add("USER");
         }}));
     }

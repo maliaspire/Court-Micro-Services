@@ -1,5 +1,6 @@
 package com.mxninja.courtMicroServices.oauthService.models;
 
+import io.jsonwebtoken.impl.DefaultClaims;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,14 +16,21 @@ import java.util.List;
  */
 public class AuthUser implements UserDetails {
 
+    private String id;
     private String username;
     private String password;
     private List<String> roles;
 
-    public AuthUser(String username, String password, List<String> roles) {
+    public AuthUser(String id, String username, String password, List<String> roles) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.roles = roles;
+    }
+
+    public AuthUser(DefaultClaims defaultClaims) {
+        this.id = defaultClaims.getId();
+        this.username = defaultClaims.getIssuer();
     }
 
     @Override
@@ -59,5 +67,13 @@ public class AuthUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public List<String> getRoles() {
+        return roles;
     }
 }

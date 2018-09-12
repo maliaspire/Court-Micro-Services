@@ -17,10 +17,18 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
     compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.4.RELEASE'
     compile project(':shared-module')
     compileOnly("org.projectlombok:lombok:$rootProject.lombokVersion")
     annotationProcessor("org.projectlombok:lombok:$rootProject.lombokVersion")
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     compile('org.springframework.boot:spring-boot-starter-web')
     runtime('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile 'io.jsonwebtoken:jjwt:0.9.0'
+    /*runtime 'io.jsonwebtoken:jjwt-impl:0.10.5',
+            // Uncomment the next line if you want to use RSASSA-PSS (PS256, PS384, PS512) algorithms:
+            //'org.bouncycastle:bcprov-jdk15on:1.60',
+            'io.jsonwebtoken:jjwt-jackson:0.10.5'*/
 }
